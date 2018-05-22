@@ -1,5 +1,7 @@
 IDRegistry.genItemID("cableCopper0");
 IDRegistry.genItemID("cableCopper1");
+IDRegistry.genItemID("pipe");
+
 Item.createItem("cableCopper0", "Copper Cable", {name: "cable_copper", meta: 0});
 Item.createItem("cableCopper1", "Copper Cable (insulated)", {name: "cable_copper", meta: 1});
 
@@ -22,4 +24,9 @@ Item.registerUseFunction("cableCopper1", function(coords, item, block){
 		Player.setCarriedItem(item.id, item.count - 1, item.data);
 		EnergyTypeRegistry.onWirePlaced();
 	}
+});
+
+// drop 
+Block.registerDropFunction("cableCopper", function(){
+	return [[ItemID.cableCopper1, 1, 0]];
 });

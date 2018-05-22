@@ -1,7 +1,7 @@
 /*
 IDRegistry.genBlockID("labContructor"); 
 Block.createBlock("labContructor", [
-	{name: "Constructor of laboratories", texture: [["machine_block", 0], ["lab_constructor_top", 0], ["lab_constructor_side", 0], ["lab_constructor_side", 0], ["lab_constructor_side", 0], ["lab_constructor_side", 0]], inCreative: true}
+	{name: "Constructor Of Laboratories", texture: [["machine_block", 0], ["lab_constructor_top", 0], ["lab_constructor_side", 0], ["lab_constructor_side", 0], ["lab_constructor_side", 0], ["lab_constructor_side", 0]], inCreative: true}
 ], "opaque");
 
 ToolAPI.registerBlockMaterial(BlockID.labContructor, "stone", 3, true);

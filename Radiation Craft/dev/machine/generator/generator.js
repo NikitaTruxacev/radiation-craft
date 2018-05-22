@@ -1,11 +1,10 @@
-IDRegistry.genBlockID("generator");
+﻿IDRegistry.genBlockID("generator");
 Block.createBlockWithRotation("generator", [
 	{name: "Generator", texture: [["machine_block", 0], ["machine_block", 0], ["machine_block", 0], ["generator", 0], ["machine_block", 0], ["machine_block", 0]], inCreative: true}
 ], "opaque");
 
 MachineRenderer.setStandartModel(BlockID.generator, [["machine_block", 0], ["machine_block", 0], ["machine_block", 0], ["generator", 0], ["machine_block", 0], ["machine_block", 0]], true);
 MachineRenderer.registerRenderModel(BlockID.generator, [["machine_block", 0], ["machine_block", 0], ["machine_block", 0], ["generator", 1], ["machine_block", 0], ["machine_block", 0]], true);
-
 
 Block.registerDropFunction("generator", function(coords, blockID, blockData, level, enchant){
 		return [[BlockID.machineBlock, 1, 0]];
@@ -31,12 +30,12 @@ var guiGenerator = new UI.StandartWindow({
 		"slotEnergy": {type: "slot", x: 441, y: 75},
 		"slotFuel": {type: "slot", x: 441, y: 212},
 		"textInfo1": {type: "text", x: 642, y: 142, width: 300, height: 30, text: "0/"},
-		"textInfo2": {type: "text", x: 642, y: 172, width: 300, height: 30, text: "50000"}
+		"textInfo2": {type: "text", x: 642, y: 172, width: 300, height: 30, text: "10000"}
 	}
 });
 
 
-MachineRegistry.registerPrototype(BlockID.generator, {
+Machine.registryPrototype(BlockID.generator, {
     defaultValues: {
 		burn: 0,
 		burnMax: 0,
@@ -73,11 +72,11 @@ MachineRegistry.registerPrototype(BlockID.generator, {
 			this.data.burn = this.data.burnMax = this.getFuel("slotFuel") / 4;
 		}
 		if(this.data.burn > 0 && this.data.energy < energyStorage){
-			this.data.energy = Math.min(this.data.energy + 128, energyStorage);
+			this.data.energy = Math.min(this.data.energy + 10, energyStorage);
 			this.data.burn--;
 		}
 		
-		this.data.energy -= ChargeItemRegistry.addEnergyTo(this.container.getSlot("slotEnergy"), this.data.energy, 128, 0);
+		this.data.energy -= ChargeItemRegistry.addEnergyTo(this.container.getSlot("slotEnergy"), this.data.energy, 32, 0);
 		
 		this.container.setScale("burningScale", this.data.burn / this.data.burnMax || 0);
 		this.container.setScale("energyScale", this.data.energy / energyStorage);
@@ -90,22 +89,16 @@ MachineRegistry.registerPrototype(BlockID.generator, {
 	},
 	
 	getEnergyStorage: function(){
-		return 50000;
+		return 10000;
 	},
 	
 	energyTick: function(type, src){
-		var output = Math.min(512, this.data.energy);
+		var output = Math.min(32, this.data.energy);
 		this.data.energy += src.add(output) - output;
 	},
 	
-	init: MachineRegistry.initModel,
-	activate: MachineRegistry.activateMachine,
-	deactivate: MachineRegistry.deactivateMachine,
+	init: Machine.initModel,
+	activate: Machine.activateMachine,
+	deactivate: Machine.deactivateMachine,
 	destroy: this.deactivate,
 });
-
-
-/*
-Callback.addCallback("PostLoaded", function(){
-	
-});*/

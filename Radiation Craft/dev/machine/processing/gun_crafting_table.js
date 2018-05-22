@@ -3,11 +3,6 @@ Block.createBlockWithRotation("gunCraftingTable", [
 	{name: "Gun Crafting Table", texture: [["machine_block", 0], ["guntable_top", 0], ["guntable_side", 0], ["guntable_side", 0], ["guntable_side", 0], ["guntable_side", 0]], inCreative: true}
 ], "opaque");
 
-Block.registerDropFunction("gunCraftingTable", function(coords, blockID, blockData, level, enchant){
-		return [[BlockID.machineBlock, 1, 0]];
-});
-
-
 var guiGunCraftingTable = new UI.StandartWindow({
 	
 standart: {
@@ -17,15 +12,11 @@ background: {standart: true}
 },
 
 drawing: [
-{type: "bitmap", bitmap: "furnace_bar_background", x: 610, y: 215, scale: guiScale},
-{type: "bitmap", bitmap: "energy_small_background", x: 610, y: 150, scale: guiScale},
-//{type: "bitmap", bitmap: "arrow_down_right", x: 680, y: 120, scale: guiScale},
+{type: "bitmap", bitmap: "furnace_bar_background", x: 610, y: 215, scale: guiScale}
 ],
 
 elements: {
 	"progressScale": {type: "scale", x: 610, y: 215, direction: 0, value: 0, bitmap: "furnace_bar_scale", scale: guiScale},
-	"progressScale1": {type: "scale", x: 610, y: 150, direction: 0, value: 1, bitmap: "energy_small_scale", scale: guiScale},
-	
 	"input": {type: "slot", x: 375, y: 215, size: 70},
 	"input1": {type: "slot", x: 450, y: 215, size: 70},
 	"input2": {type: "slot", x: 525, y: 215, size: 70},
@@ -62,7 +53,7 @@ RecipeRegistry.add({
 });
 
 
-MachineRegistry.registerPrototype(BlockID.gunCraftingTable, {
+Machine.registryPrototype(BlockID.gunCraftingTable, {
 	getGuiScreen: function(){
 		return guiGunCraftingTable;
 	},

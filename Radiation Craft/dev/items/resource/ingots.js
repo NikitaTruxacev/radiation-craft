@@ -19,4 +19,9 @@ Item.createItem("ingotAlloy", "Alloy Ingot", {name: "ingot_alloy", data: 0});
 Callback.addCallback("PostLoaded", function(){
 	Recipes.addFurnace(265, ItemID.ingotSteel, 0);
 	Recipes.addShaped({id: ItemID.ingotAlloy, count: 2, data: 0}, ["aaa","bbb","ccc"], ['a', ItemID.ingotSteel, 0,'b', ItemID.ingotCopper, 0,'c',ItemID.ingotTin,0]);
+	Recipes.addFurnace(BlockID.oreAluminium, ItemID.ingotAluminium, 0);
+	Recipes.addFurnace(BlockID.oreCopper,ItemID.ingotCopper, 0);
+	Recipes.addFurnace(BlockID.oreTin,ItemID.ingotTin, 0);
+	Recipes.addFurnace(BlockID.oreLead, ItemID.ingotLead, 0);
+	ToolAPI.registerBlockMaterial(BlockID.oreUranium, "stone", 3, true);
 });

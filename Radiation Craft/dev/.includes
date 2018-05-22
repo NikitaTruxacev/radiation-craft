@@ -1,13 +1,9 @@
 header.js
 translation.js
+
 core/api/render.js
 core/api/define.js
-machine/storage/charge_registry.js
 
-other/GuideHeader.js
-other/RuinsGen.js
-other/diseases/radiation.js
-other/diseases/zdisease.js
 
 items/resource/ore_drops.js
 items/resource/ingots.js
@@ -48,41 +44,56 @@ items/armor/protective_suit.js
 
 
 
-block/misc/cable.js
-block/tech/basic.js
-
-machine/processing/lab_constructor.js
-machine/processing/nuclear_furnace.js
-machine/processing/vacuum_furnace.js
-machine/processing/alloy_smelter.js
-machine/processing/gun_crafting_table.js
-machine/processing/terraformer.js
-
-machine/storage/capacitor.js
-machine/storage/advanced_capacitor.js
-machine/generator/generator.js
-
-machine/misc/tree/sapling.js
-machine/misc/tree/root.js
-machine/misc/fast_travel.js
-
-block/tech/computer.js
-block/tech/disk_drive.js
-
-block/storage/crate.js
-block/storage/iron_coffer.js
-block/storage/strong_box.js
+block/nuclear_bomb.js
+block/metal.js
+block/ore.js
 
 block/decorations/toaster.js
 block/decorations/siren.js
 block/decorations/lamp.js
 block/decorations/glass.js
 
+block/misc/cable.js
+block/misc/tree/rubber_tree.js
+
+
 block/reinforced/reinforced.js
 block/reinforced/reinforced_door.js
 
-block/misc/tree/rubber_tree.js
+block/storage/crate.js
+block/storage/iron_coffer.js
+block/storage/strong_box.js
 
-block/nuclear_bomb.js
-block/metal.js
-block/ore.js
+block/tech/basic.js
+block/tech/computer.js
+block/tech/disk_drive.js
+
+
+
+machine/generator/generator.js
+machine/generator/solar_panel.js
+
+machine/misc/tree/sapling.js
+machine/misc/tree/root.js
+machine/misc/fast_travel.js
+
+machine/other/terraformer.js
+machine/other/lab_constructor.js
+machine/other/air_purifier.js
+
+
+machine/processing/nuclear_furnace.js
+machine/processing/vacuum_furnace.js
+machine/processing/alloy_smelter.js
+machine/processing/gun_crafting_table.js
+
+machine/storage/capacitor.js
+machine/storage/advanced_capacitor.js
+machine/storage/charge_registry.js
+
+
+
+other/RuinsGen.js
+other/diseases/radiation.js
+other/diseases/zdisease.js
+

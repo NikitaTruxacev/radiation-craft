@@ -1,12 +1,10 @@
 ﻿IDRegistry.genBlockID("ironCoffer"); 
 Block.createBlock("ironCoffer", [
 	{name: "Iron Coffer", texture: [["iron_coffer", 0]], inCreative: true}
-]);
+, "opaque"]);
 
-ToolAPI.registerBlockMaterial(ironCoffer, "stone");
-Block.setDestroyTime(ironCoffer, 3);
-
-
+ToolAPI.registerBlockMaterial(BlockID.ironCoffer, "stone");
+Block.setDestroyTime(BlockID.ironCoffer, 3);
 
 
 var iron_coffer_gui = new UI.StandartWindow({
@@ -51,7 +49,7 @@ elements: {
 
 TileEntity.registerPrototype(BlockID.ironCoffer,{
 	getGuiScreen:function(){
-		return iron_coffer_gui
+		return iron_coffer_gui;
 	}
 });
 

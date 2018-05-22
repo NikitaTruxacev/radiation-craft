@@ -2,7 +2,7 @@
 
 Translation.addTranslation("Bronze Furnace", {ru: "Бронзовая печь",zh:"青铜熔炉"});
 Translation.addTranslation("Capacitor", {ru: "Аккумулятор",zh:"电池"});
-Translation.addTranslation("Advanced capacitor", {ru: "Продвинутый аккумулятор",zh:"高级电池"});
+Translation.addTranslation("Advanced Capacitor", {ru: "Продвинутый аккумулятор",zh:"高级电池"});
 
 Translation.addTranslation("Crate", {ru: "Деревянный ящик"});
 Translation.addTranslation("Iron Coffer", {ru: "Железный ящик"});
@@ -11,19 +11,19 @@ Translation.addTranslation("Machine Block", {ru: "Основной блок ме
 Translation.addTranslation("Alloy Smelter", {ru: "Плавильный цех"}); 
 Translation.addTranslation("Generator", {ru: "Генератор"}); 
 Translation.addTranslation("Computer", {ru: "Компьютер",zh:"电脑"});
-Translation.addTranslation("Disk drive", {ru: "Дисковод",zh:"磁盘驱动器"});
+Translation.addTranslation("Disk Drive", {ru: "Дисковод",zh:"磁盘驱动器"});
 Translation.addTranslation("Lead Glass", {ru: "Свинцовое стекло",zh:"铅玻璃"});
 Translation.addTranslation("Uranium Glass", {ru: "Урановое стекло",zh:"铀玻璃"});
 Translation.addTranslation("Gun Crafting Table", {ru: "Стол для рукоделия",zh:"枪械工作台"});
 Translation.addTranslation("Nuclear Furnace", {ru: "Атомная печь",zh:"核力熔炉"});
-Translation.addTranslation("Constructor of laboratories", {ru: "Конструктор лабораторий",zh:"构造函数实验室"});
+Translation.addTranslation("Constructor Of Laboratories", {ru: "Конструктор лабораторий",zh:"构造函数实验室"});
 Translation.addTranslation("Lamp", {ru: "Лампа",zh:"灯"});
-Translation.addTranslation("Glow lamp", {ru: "Лампа",zh:"发光的灯"});
+Translation.addTranslation("Glow Lamp", {ru: "Лампа",zh:"发光的灯"});
 
 Translation.addTranslation("Siren", {ru: "Сирена",zh:"警报器"});
 Translation.addTranslation("Strong Box", {ru: "Сейф",zh:"保险箱"});
 Translation.addTranslation("Terraformer", {ru: "Терраформер",zh:"地形改造器"});
-Translation.addTranslation("Nuclear bomb", {ru: "Ядерная бомба",zh:"核弹"});
+Translation.addTranslation("Nuclear Bomb", {ru: "Ядерная бомба",zh:"核弹"});
 Translation.addTranslation("Toaster", {ru: "Тостер",zh:"烤面包机"});
 
 Translation.addTranslation("Reinforced Stone", {ru: "Укреплённый камень", es: "Piedra Reforzada", zh: "防爆石"});

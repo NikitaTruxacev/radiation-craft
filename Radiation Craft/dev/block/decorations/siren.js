@@ -3,8 +3,8 @@ Block.createBlock("siren", [
 	{name: "Siren", texture: [["siren", 0]], inCreative: true}
 ], "opaque");
 
-MachineRenderer.setStandartModel(BlockID.siren, [["siren", 0]]);
-//MachineRenderer.registerRenderModel(BlockID.siren, [["siren", 1]]);
+/*MachineRenderer.setStandartModel(BlockID.siren, [["siren", 0]]);
+MachineRenderer.registerRenderModel(BlockID.siren, [["siren", 1]]);*/
 
 
 ToolAPI.registerBlockMaterial(BlockID.siren, "stone");

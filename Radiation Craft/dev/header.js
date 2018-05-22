@@ -1,7 +1,10 @@
-﻿IMPORT("energylib");
-IMPORT("ToolType");
-IMPORT("SoundLib");
-IMPORT("RadiationCore");
+﻿importLib("ToolType", "*");
+importLib("energylib", "*");
+importLib("SoundLib", "*");
+importLib("RadiationCore", "*");
+
+// energy (Rad)
+var Rad = EnergyTypeRegistry.assureEnergyType("Eu", 1);
 
 //Sounds
 
@@ -10,6 +13,12 @@ var sndSiren = new Sound("machines_sounds/", "siren.mp3");
 //var relAk74 = new Sound("guns_sounds/", "AK74_reload.ogg");
 var sndAK74 = new Sound("guns_sounds/", "AK74_shoot.ogg");
 
+
+// import values, that work faster
+var MobEffect = Native.PotionEffect;
+var Enchantment = Native.Enchantment;
+var BlockSide = Native.BlockSide;
+var EntityType = Native.EntityType;
 
 
 Callback.addCallback("LevelLeft",function(){
@@ -34,10 +43,6 @@ for(var iarr = 0; iarr < ARROW.length; iarr++) {
 		Entity.remove(ARROW[iarr]); 	
 	}
 }});
-
-
-// energy (Eu)
-var EU = EnergyTypeRegistry.assureEnergyType("Eu", 1);
 
 var guiScale = 3.5;
 

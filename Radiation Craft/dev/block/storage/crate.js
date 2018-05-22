@@ -1,16 +1,13 @@
 ﻿IDRegistry.genBlockID("crate"); 
 Block.createBlock("crate", [
 	{name: "Crate", texture: [["crate", 0]], inCreative: true}
-]);
+, "opaque"]);
 
 Block.setDestroyTime(BlockID.crate, 4);
 ToolAPI.registerBlockMaterial(BlockID.crate, "wood");
 
 Recipes.addShaped({id: BlockID.crate, count: 1, data: 0}, ["ooo","obo","ooo"], ['o', 5, -1,'b',265,0]);
-Recipes.addShaped({id: BlockID.crate, count: 1, data: 0}, ["ooo","obo","ooo"], ['o', BlockID.rubberTreePlanks, 0,'b',265,0]);
 Recipes.addFurnace(BlockID.crate,263, 1);
-
-
 
 
 
@@ -54,4 +51,8 @@ elements: {
 	"produce27": {type: "slot", x: 850, y: 170, size: 60}
 }});
 
-TileEntity.registerPrototype(BlockID.crate,{getGuiScreen:function(){return gui_crate}});
+TileEntity.registerPrototype(BlockID.crate,{
+	getGuiScreen:function(){
+		return gui_crate;
+	}
+});

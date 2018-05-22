@@ -3,10 +3,6 @@ Block.createBlockWithRotation("alloySmelter", [
 	{name: "Alloy Smelter", texture: [["alloy_smelter_side", 0], ["alloy_smelter_side",0], ["alloy_smelter_side", 0], ["alloy_smelter", 0], ["alloy_smelter_side", 0], ["alloy_smelter_side", 0]], inCreative: true}
 ], "opaque");
 
-Block.registerDropFunction("alloySmelter", function(coords, blockID, blockData, level, enchant){
-		return [[BlockID.machineBlock, 1, 0]];
-});
-
 MachineRenderer.setStandartModel(BlockID.alloySmelter, [["alloy_smelter_side", 0], ["alloy_smelter_side", 0], ["alloy_smelter_side", 0], ["alloy_smelter", 0], ["alloy_smelter_side", 0], ["alloy_smelter_side", 0]], true);
 MachineRenderer.registerRenderModel(BlockID.alloySmelter, [["alloy_smelter_side", 0], ["nuclear_bomb", 0], ["alloy_smelter_side", 0], ["alloy_smelter", 1], ["alloy_smelter_side", 0], ["alloy_smelter_side", 0]], true);
 
@@ -24,14 +20,14 @@ drawing: [
 ],
 
 elements: {
-	"fuel": {type: "slot", x: 700, y: 280, size: 60}, 
+	"input": {type: "slot", x: 700, y: 280, size: 60}, 
 	"input": {type: "slot", x: 590, y: 85, size: 60}, 
 	"input0": {type: "slot", x: 690, y: 180, size: 60}, 
 	"input1": {type: "slot", x: 500, y: 180, size: 60}
 }});
 
 
-MachineRegistry.registerPrototype(BlockID.alloySmelter, {
+Machine.registryPrototype(BlockID.alloySmelter, {
 	getGuiScreen: function(){
 		return guiAlloySmelter;
 	}
@@ -51,5 +47,5 @@ Callback.addCallback("DestroyBlockStart", function(coords, block){
 
 
 Callback.addCallback("PostLoaded", function(){
-Recipes.addShaped({id: BlockID.alloySmelter, count: 1, data: 0}, ["ooo","oco","ooo"], ['o',351, 14,'c', 61,0]);
+	Recipes.addShaped({id: BlockID.alloySmelter, count: 1, data: 0}, ["ooo","oco","ooo"], ['o',351, 14,'c', 61,0]);
 });

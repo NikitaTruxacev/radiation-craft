@@ -35,7 +35,7 @@ var guiVacuumFurnace = new UI.StandartWindow({
 });
 
 
-MachineRegistry.registerPrototype(BlockID.vacuumFurnace, {
+Machine.registryPrototype(BlockID.vacuumFurnace, {
 	getGuiScreen: function(){
 		return guiVacuumFurnace;
 	}

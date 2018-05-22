@@ -1,9 +1,8 @@
 IDRegistry.genBlockID("oreAluminium"); 
 Block.createBlock("oreAluminium", [
-	{name: "Aluminium Ore", texture: [["ore_aluminium", 0]], inCreative: true}
+	{name: "Aluminium Ore", texture: [["ore_aluminum", 0]], inCreative: true}
 ], "opaque");
 
-Recipes.addFurnace(BlockID.oreAluminium, ItemID.ingotAluminium, 0);
 ToolAPI.registerBlockMaterial(BlockID.oreAluminium, "stone", 2, true);
 Block.setDestroyTime(BlockID.oreAluminium, 3);
 Block.setDestroyLevel("oreAluminium", 2);
@@ -15,7 +14,7 @@ Block.createBlock("oreCopper", [
 	{name: "Copper Ore", texture: [["ore_copper", 0]], inCreative: true}
 ], "opaque");
 
-Recipes.addFurnace(BlockID.oreCopper,ItemID.ingotCopper, 0);
+
 ToolAPI.registerBlockMaterial(BlockID.oreCopper, "stone", 2, true);
 Block.setDestroyTime(BlockID.oreCopper, 3);
 Block.setDestroyLevel("oreCopper", 2);
@@ -27,7 +26,7 @@ Block.createBlock("oreTin", [
 	{name: "Tin Ore", texture: [["ore_tin", 0]], inCreative: true}
 ], "opaque");
 
-Recipes.addFurnace(BlockID.oreTin,ItemID.ingotTin, 0);
+
 ToolAPI.registerBlockMaterial(BlockID.oreTin, "stone", 2, true);
 Block.setDestroyTime(BlockID.oreTin, 3);
 Block.setDestroyLevel("oreTin", 2);
@@ -39,7 +38,7 @@ Block.createBlock("oreLead", [
 	{name: "Lead Ore", texture: [["ore_lead", 0]], inCreative: true}
 ], "opaque");
 
-Recipes.addFurnace(BlockID.oreLead, ItemID.ingotLead, 0);
+
 ToolAPI.registerBlockMaterial(BlockID.oreLead, "stone", 2, true);
 Block.setDestroyTime(BlockID.oreLead, 3);
 Block.setDestroyLevel("oreLead", 2);
@@ -50,7 +49,8 @@ IDRegistry.genBlockID("oreUranium");
 Block.createBlock("oreUranium", [
 	{name: "Uranium Ore", texture: [["ore_uranium", 0]], inCreative: true}
 ], "opaque");
-ToolAPI.registerBlockMaterial(BlockID.oreUranium, "stone", 3, true);
+
+ToolAPI.registerBlockMaterial(BlockID.oreUranium, "stone", 2, true);
 Block.setDestroyTime(BlockID.oreUranium, 3);
 Block.setDestroyLevel("oreUranium", 2);
 
@@ -82,6 +82,11 @@ var OreGenerator = {
 	"lead_ore": __config__.getBool("ore_gen.lead_ore"),
 	"uranium_ore": __config__.getBool("ore_gen.uranium_ore"),
 	"sulfur_ore": __config__.getBool("ore_gen.sulfur_ore"),
+	
+	setOre: function(x, y, z, id, data){
+		if(World.getBlockID(x, y, z) == 1){
+		World.setBlock(x, y, z, id, data);}
+	}
 }
 
 

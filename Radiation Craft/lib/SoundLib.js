@@ -29,7 +29,7 @@ function Sound(url, music_file) {
 		this.mPlayer.setLooping(loop);
 	}
 	
-	this.pauseSound = function(loop){
+	this.pauseSound = function(){
 		this.mPlayer.pause();
 	}
 		

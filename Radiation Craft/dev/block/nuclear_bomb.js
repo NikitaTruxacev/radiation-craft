@@ -2,7 +2,7 @@
 
 IDRegistry.genBlockID("nuclearBomb"); 
 Block.createBlockWithRotation("nuclearBomb", [
-	{name: "Nuclear bomb", texture: [["nuclear_bomb", 0]], inCreative: true}
+	{name: "Nuclear Bomb", texture: [["nuclear_bomb", 0]], inCreative: true}
 ], "opaque");
 
 

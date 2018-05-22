@@ -39,15 +39,10 @@ function setupWireRender(id, width, groupName, preventSelfAdd) {
 }
 
 function setupBlockAsWire(id) {
-	EU.registerWire(id);
+	Rad.registerWire(id);
 }
 
 setupBlockAsWire(BlockID.cableCopper);
 setupWireRender(BlockID.cableCopper, 3/8, "ic-wire");
 
-
-// drop 
-Block.registerDropFunction("cableCopper", function(){
-	return [[ItemID.cableCopper1, 1, 0]];
-});
 
