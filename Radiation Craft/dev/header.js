@@ -1,7 +1,8 @@
 ﻿importLib("ToolType", "*");
 importLib("energylib", "*");
 importLib("SoundLib", "*");
-importLib("RadiationCore", "*");
+importLib("AdvancedAI", "*");
+importLib("dimensions", "*");
 
 // energy (Rad)
 var Rad = EnergyTypeRegistry.assureEnergyType("Eu", 1);

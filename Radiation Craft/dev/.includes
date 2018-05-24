@@ -15,8 +15,11 @@ items/energy/components.js
 items/energy/computer_components.js
 
 items/guns/parts_of_guns.js
-items/guns/guns.js
 items/guns/guns_ammo.js
+items/guns/guns.js
+items/guns/guns_shoot.js
+
+
 items/guns/additional_items/weapons.js
 items/guns/additional_items/grenades.js
 items/guns/additional_items/medical_kit.js
@@ -41,6 +44,7 @@ items/other/guide_book.js
 items/other/reinforced_door_item.js
 
 items/armor/protective_suit.js
+items/armor/helmet_real_glass.js
 
 
 

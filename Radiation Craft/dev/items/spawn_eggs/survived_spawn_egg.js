@@ -2,63 +2,78 @@
 var r = random(0, 5); mas[r]*/
 
 IDRegistry.genItemID("eggSurvived");
-Item.createItem("eggSurvived", "Survivor spawn egg", {name: "egg_survived", data: 0});
+Item.createItem("eggSurvived", "Survived spawn egg", {name: "egg_survived", data: 0});
 
-/*
-var survivor_entity = MobRegistry.registerEntity("survivor-men"); 
-var survivor_texture = new Texture("survived.png").setResolution(64, 32).setPixelScale(1);
-var survivor_model = survivor_entity.setRender(human);
 
-survivor_model.setTexture(survivor_texture); 
-Entity.setHealth(survivor_entity, 20) ;
+var Survived = MobRegistry.registerEntity("survived");
+Survived.customizeEvents({
+	tick: function(){
+	Entity.setRender(this.entity, 3);//render
+	Entity.setSkin(this.entity, "mob/survived.png");//skin
+},
 
-survivor_entity.customizeVisual({ 
-	getModels: function() {
-		return {
-			"main": survivor_model
-		};
-	}
+attackedBy: function(attacker, amount){
+	//sound
+}
 });
 
-survivor_entity.customizeDescription({
-	getHitbox: function() {
-		return {w: 1, h: 2};
-	}
+Survived.customizeDescription({
+	getHitbox: function(){
+	return {w: 1, h: 2}
+}
 });
+Survived.customizeAI({
+getAITypes: function(){
+return {
+wander: {
+type: EntityAI.Wander,
 
-
-Item.registerUseFunction("eggSurvived", function(coords, item, block){
-	coords = coords.relative;
-	Entity.spawnCustom("survivor-men", coords.x + 0.5, coords.y + 1, coords.z + 0.5);
-});
-
-survivor_entity.customizeAI({
-	getAITypes: function(){
-		return {
-			ander: {
-				type: EntityAI.Wander,
-				priority: 4,
-				speed: 1,
-				angular_speed: 0.1,
-				delay_weigth: 0.2
+priority: 4,
+speed: 0.09,
+angular_speed: 0.1,
+delay_weigth: 0.2
 },
 
 follow: {
-	type: EntityAI.Follow,
-	priority: 0,
-	speed: 0.1,
-	rotateHead: true
+type: EntityAI.Follow,
+priority: 0,
+speed: 0.05,
+rotateHead: true
 },
 
 attack: {
-	type: EntityAI.Attack,
-	priority: 0,
-	attack_damage: 6,
-	attack_range: 2,
-	attack_rate: 50
+type: EntityAI.Attack,
+
+priority: 0,
+attack_damage: 1,
+attack_range: 1,
+attack_rate: 30
 },
 
 enemy_watcher: {
-	type: DC.AI.EnemyWatcher
-}};
-}}); */
+type: AdvancedAI.EnemyWatcher,
+
+attackAI: "attack",
+followAI: "follow",
+find_delay: 10,
+priority_on_attack: 5,
+priority_on_idle: 0,
+feelingModifier: 16
+}
+};
+}
+});//AI
+
+//spawn from egg
+Item.registerUseFunction("eggSurvived", function(coords, item, block){
+	var coords = coords.relative;
+	Entity.spawnCustom("survived", coords.x + .5, coords.y + 1, coords.z + .5);
+}); //spawn
+
+/*
+Callback.addCallback("EntityDeath", function(entity){
+if(Entity.getType(entity) == Survived){
+var coords = Entity.getPosition(entity);
+World.drop(coords.x, coords.y, coords.z, 289, 0, 2);
+}
+});*/ //droped порох
