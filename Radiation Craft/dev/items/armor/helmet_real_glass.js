@@ -1,12 +1,9 @@
-
 var PopupWindow;
 var HRG = true;
 var MainActivity = UI.getContext();
 
 //HelmetUI
 
-//GUI HRG
-/*
 function newHRG(){
 	MainActivity.runOnUiThread(new java.lang.Runnable({
 	run: function(){
@@ -17,7 +14,7 @@ function newHRG(){
 		var LinearLayout = new android.widget.LinearLayout(MainActivity);
 		LinearLayout.setOrientation(1);
 
-		var File = new android.graphics.BitmapFactory.decodeStream(ModPE.openInputStreamFromTexturePack("images/gui/menu/HG/HRG.png"));
+		var file = __dir__ + "gui/HRG.png";
 
 		PopupWindow.setTouchable(false);
 
@@ -26,7 +23,7 @@ function newHRG(){
 		PopupWindow.setHeight(MainActivity.getWindowManager().getDefaultDisplay().getHeight());
 		PopupWindow.setWidth(MainActivity.getWindowManager().getDefaultDisplay().getWidth());
 		
-		PopupWindow.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(File));
+		PopupWindow.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(file));
 		PopupWindow.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.CENTER | android.view.Gravity.TOP, 0,0);
 	}catch(err){
 print(err);
@@ -43,11 +40,13 @@ function leaveHRG(){
 }}));
 }
 
-if(Player.getArmorSlot(0) == 1611 && HRG == false)
-{
-HRG = true;
-newHRG();
-}else{
-HRG = false;
-leaveHRG();
-}}*/
+
+Callback.addCallback("tick",function(){
+	if(HRG == false && Player.getArmorSlot(0) == ItemID.ProtectiveHelmet){
+		HRG = true;
+		newHRG();
+		}else{
+		HRG = false;
+		leaveHRG();
+		}
+});

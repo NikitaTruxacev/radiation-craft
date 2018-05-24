@@ -1,6 +1,7 @@
 ﻿var GUIf;
 var GUIa; 
 var GUI;
+var tap = 0;
 
 function buttFireCrt(){
 		var ctxf = UI.getContext();
@@ -102,7 +103,7 @@ Game.message('An error occured: ' + err);
      
      GUI = new android.widget.PopupWindow(layout, android.widget.RelativeLayout.LayoutParams.WRAP_CONTENT, android.widget.RelativeLayout.LayoutParams.WRAP_CONTENT);
 	GUI.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT));
-	GUI.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.CENTER | android.view.Gravity.CENTER, 0, 0);
+	GUI.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.CENTER | android.view.Gravity.CENTER, -1, -1);
 	}catch(err){
 Game.message('An error occured: ' + err);
 }}}));
@@ -118,40 +119,40 @@ Game.message('An error occured: ' + err);
 }}));
 }
 
-//if item = true
-
 var btns = false;
 
 Callback.addCallback("tick",function() {
-	if(btns == false && Player.getCarriedItem().id == ItemID.aks74U){
+	var item = Player.getCarriedItem();
+	
+	if(btns == false && item.id == ItemID.aks74u){
 		btns = true;
 		buttFireCrt();
 		buttAimCrt();
 		aimCrt();
-	}
-		
-	if(btns == true && Player.getCarriedItem().id != ItemID.aks74U){
+	}else{
+	if(btns == true && item.id != ItemID.aks74u){
 		btns = false;
 		buttFireLeave();
 		buttAimLeave();
 		aimLeave();
 		Player.resetFov();
 	}
-	
-	/*if(World.getThreadTime() % 20 == 0 && (currentUIscreen == "hud_screen" || currentUIscreen == "in_game_play_screen")){
-		if(btns == true){
-			buttFireLeave();
-			buttAimLeave();
-			aimLeave();
-			Player.resetFov();
-	}}*/
-});
+}});
 
 Callback.addCallback("LevelLeft", function(){
 		buttFireLeave();
 		buttAimLeave();
 		aimLeave();
 		Player.resetFov();
+});
+
+Callback.addCallback("NativeGuiChanged", function(screenName){
+	if(screenName == "hud_screen" || screenName == "in_game_play_screen"){
+		buttFireLeave();
+		buttAimLeave();
+		aimLeave();
+		Player.resetFov();
+	}
 });
 
 /*
